@@ -1,0 +1,272 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4; /* خلفية عامة لطيفة */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem; /* أضف مسافة داخلية لمنع الالتصاق بالأطراف */
+}
+
+/* Header Styles */
+header {
+    background: #00468B;
+    color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* أضف ظلاً خفيفًا لتحسين المظهر */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* دعم التكديس للأجهزة الصغيرة */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 1rem; /* استخدم gap للتباعد بين العناصر */
+    flex-wrap: wrap; /* دعم التكديس عند الحاجة */
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem; /* مسافة حول النص */
+    border-radius: 5px; /* زوايا مستديرة */
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #FFD700;
+    background: rgba(255, 255, 255, 0.1); /* خلفية شفافة عند التمرير */
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, #00468B, #0074D9);
+    color: #fff;
+    text-align: center;
+    padding: 4rem 1rem;
+    border-bottom: 5px solid #003366; /* خط سفلي مميز */
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase; /* جعل النص بحروف كبيرة */
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.hero .btn {
+    background: #FFD700;
+    color: #00468B;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.hero .btn:hover {
+    background: #FFC107;
+    transform: scale(1.05); /* تأثير تكبير خفيف عند التمرير */
+}
+
+/* Section Styles */
+.section {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.section h2 {
+    color: #00468B;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.section p {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: justify; /* ضبط النص للتناسب */
+}
+
+/* Token Section */
+.token .btn {
+    background: #00468B;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.token .btn:hover {
+    background: #003366;
+}
+
+/* Footer Section */
+footer {
+    background: #00468B;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    border-top: 3px solid #003366; /* خط علوي مميز */
+}
+
+footer a {
+    color: #FFD700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #FFC107;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .section h2 {
+        font-size: 1.8rem;
+    }
+}
+/* General Styles for Contact Section */
+.contact {
+    padding: 2rem 1rem;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+.contact .container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact form label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+    text-align: left;
+}
+
+.contact form input,
+.contact form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact form input:focus,
+.contact form textarea:focus {
+    border-color: #00468B;
+    box-shadow: 0 0 5px rgba(0, 70, 139, 0.5);
+    outline: none;
+}
+
+.contact form textarea {
+    resize: vertical;
+}
+
+.contact form button {
+    background: #00468B;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.contact form button:hover {
+    background: #003366;
+    transform: scale(1.02);
+}
+
+.contact form a {
+    color: #00468B;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact form a:hover {
+    color: #FFD700;
+}
+
+/* Footer */
+footer {
+    background: #00468B;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    border-top: 3px solid #003366;
+}
