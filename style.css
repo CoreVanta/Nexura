@@ -94,26 +94,44 @@ header nav ul li a:hover {
     transform: scale(1.05); /* تأثير تكبير خفيف عند التمرير */
 }
 
-/* Section Styles */
-.section {
-    padding: 2rem 1rem;
-    text-align: center;
+/* About Section */
+.about {
+    background-color: #f9f9f9;
+    padding: 4rem 1rem;
+    text-align: left;
 }
 
-.section h2 {
+.about h2 {
+    font-size: 2rem;
     color: #00468B;
     margin-bottom: 1rem;
-    font-size: 2rem;
 }
 
-.section p {
-    margin-bottom: 1.5rem;
+.about p {
     font-size: 1.2rem;
     line-height: 1.8;
-    text-align: justify; /* ضبط النص للتناسب */
+    color: #333;
 }
 
 /* Token Section */
+.token {
+    background-color: #f1f1f1;
+    padding: 0.5rem 0.5rem;
+    text-align: left;
+}
+
+.token h2 {
+    font-size: 2rem;
+    color: #00468B;
+    margin-bottom: 1rem;
+}
+
+.token p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
 .token .btn {
     background: #00468B;
     color: #fff;
@@ -128,56 +146,7 @@ header nav ul li a:hover {
     background: #003366;
 }
 
-/* Footer Section */
-footer {
-    background: #00468B;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
-    font-size: 0.9rem;
-    border-top: 3px solid #003366; /* خط علوي مميز */
-}
-
-footer a {
-    color: #FFD700;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: #FFC107;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    header .container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    header nav ul li {
-        margin: 0.5rem 0;
-    }
-
-    .hero h2 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .section h2 {
-        font-size: 1.8rem;
-    }
-}
-/* General Styles for Contact Section */
+/* Contact Section */
 .contact {
     padding: 2rem 1rem;
     background: #f4f4f4;
@@ -261,12 +230,116 @@ footer a:hover {
     color: #FFD700;
 }
 
-/* Footer */
-footer {
-    background: #00468B;
-    color: white;
+/* Section Styles */
+.section {
+    padding: 2rem 1rem;
     text-align: center;
-    padding: 1rem 0;
-    font-size: 0.9rem;
-    border-top: 3px solid #003366;
 }
+
+.section h2 {
+    color: #00468B;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.section p {
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: justify; /* ضبط النص للتناسب */
+}
+
+/* Table Styling for ICO Phases */
+.table-container {
+    margin-top: 30px;
+    overflow-x: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة الظل لتحسين الشكل */
+    border-radius: 8px; /* جعل الحواف مستديرة */
+}
+
+.ico-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.ico-table th, .ico-table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+.ico-table th {
+    background-color: #00468B;
+    color: white;
+}
+
+.ico-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.ico-table tbody tr:hover {
+    background-color: #e0e0e0; /* تأثير عند التمرير على الصف */
+}
+
+.ico-table td {
+    color: #333;
+}
+
+.ico-table tbody tr:first-child {
+    border-top: 3px solid #00468B; /* إضافة حدود علوية مميزة */
+}
+
+.ico-table tbody tr:last-child {
+    border-bottom: 3px solid #00468B; /* إضافة حدود سفلية مميزة */
+}
+
+/* Responsive Adjustments for Table */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .section h2 {
+        font-size: 1.8rem;
+    }
+
+    .ico-table th, .ico-table td {
+        font-size: 0.9rem; /* تصغير الخط للأجهزة الصغيرة */
+        padding: 10px;
+    }
+}
+/* Footer Styles */
+footer {
+    background: #00468B; /* نفس لون الهيدر */
+    color: #fff;
+    text-align: center; /* توسيط النص */
+    padding: 1.5rem 0; /* مسافة عمودية مريحة */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف من الأعلى */
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+    color: #fff;
+}
+
