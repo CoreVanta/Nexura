@@ -10,7 +10,7 @@
     <header>
         <div class="container">
             <div class="logo">
-                <h1>contact us</h1>
+                <h1>Contact Us</h1>
             </div>
             <nav>
                 <ul>
@@ -27,7 +27,7 @@
         <section class="contact">
             <div class="container">
                 <p>If you have any questions or would like to collaborate, feel free to contact us via the form below or email us at <a href="mailto:info@nexura.com">info@nexura.com</a>.</p>
-                <form action="submit_contact_form.php" method="POST">
+                <form id="contactForm">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" placeholder="Your Name" required>
 
@@ -45,5 +45,33 @@
     <footer>
         <p>© 2024 Nexura. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            fetch('https://nexura-six.vercel.app/api/send-message', { // استبدل بالرابط الخاص بوظيفتك
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, message }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.message) {
+                        alert("Message sent successfully!");
+                    } else {
+                        alert("Failed to send message.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("An error occurred. Please try again later.");
+                });
+        });
+    </script>
 </body>
 </html>
