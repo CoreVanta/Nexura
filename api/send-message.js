@@ -5,8 +5,8 @@ module.exports = async (req, res) => {
         return res.status(405).json({ error: 'Method not allowed' });
     }
 
-    const BOT_TOKEN = 7884645245:AAEdfmJ7qzap_N0oLQzQ9IEnJEolOtTL7x4; // استبدل هذا بالتوكن الخاص بالبوت
-    const CHAT_ID = 6875281230;  // استبدل هذا بمعرف الدردشة الخاص بك
+    const BOT_TOKEN = '7884645245:AAEdfmJ7qzap_N0oLQzQ9IEnJEolOtTL7x4'; // استبدل هذا بالتوكن الخاص بالبوت
+    const CHAT_ID = '6875281230';  // استبدل هذا بمعرف الدردشة الخاص بك
     const { name, email, message } = req.body;
 
     if (!name || !email || !message) {
