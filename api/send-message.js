@@ -1,8 +1,8 @@
 const fetch = require('node-fetch');
 
 module.exports = async (req, res) => {
-    // السماح للطلبات من أي نطاق
-    res.setHeader('Access-Control-Allow-Origin', '*');
+    // السماح للطلبات من نطاق معين
+    res.setHeader('Access-Control-Allow-Origin', 'https://nexura-git-main-ahmed-m-madanys-projects.vercel.app');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
@@ -15,8 +15,8 @@ module.exports = async (req, res) => {
         return res.status(405).json({ error: 'Method not allowed' });
     }
 
-    const BOT_TOKEN = '7884645245:AAEdfmJ7qzap_N0oLQzQ9IEnJEolOtTL7x4'; // استبدل هذا بالتوكن الخاص بالبوت 
-    const CHAT_ID = '6875281230';  // استبدل هذا بمعرف الدردشة الخاص بك 
+    const BOT_TOKEN = process.env.BOT_TOKEN; // استبدل هذا بالتوكن الخاص بالبوت من البيئة
+    const CHAT_ID = process.env.CHAT_ID;     // استبدل هذا بمعرف الدردشة الخاص بك من البيئة  
     const { name, email, message } = req.body;
 
     if (!name || !email || !message) {
@@ -35,7 +35,8 @@ module.exports = async (req, res) => {
         if (response.ok) {
             res.status(200).json({ message: 'Message sent successfully!' });
         } else {
-            res.status(500).json({ error: 'Failed to send message.' });
+            const errorText = await response.text();
+            res.status(500).json({ error: `Failed to send message: ${errorText}` });
         }
     } catch (error) {
         res.status(500).json({ error: 'An error occurred.' });
