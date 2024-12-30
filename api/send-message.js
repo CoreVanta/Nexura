@@ -1,12 +1,22 @@
 const fetch = require('node-fetch');
 
 module.exports = async (req, res) => {
+    // السماح للطلبات من أي نطاق
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+    // التعامل مع طلب OPTIONS في حال كانت عملية preflight
+    if (req.method === 'OPTIONS') {
+        return res.status(200).end();
+    }
+
     if (req.method !== 'POST') {
         return res.status(405).json({ error: 'Method not allowed' });
     }
 
-    const BOT_TOKEN = '7884645245:AAEdfmJ7qzap_N0oLQzQ9IEnJEolOtTL7x4'; // استبدل هذا بالتوكن الخاص بالبوت
-    const CHAT_ID = '6875281230';  // استبدل هذا بمعرف الدردشة الخاص بك
+    const BOT_TOKEN = '7884645245:AAEdfmJ7qzap_N0oLQzQ9IEnJEolOtTL7x4'; // استبدل هذا بالتوكن الخاص بالبوت 
+    const CHAT_ID = '6875281230';  // استبدل هذا بمعرف الدردشة الخاص بك 
     const { name, email, message } = req.body;
 
     if (!name || !email || !message) {
